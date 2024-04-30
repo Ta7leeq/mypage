@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="urf-8">
+	<title></title>
+
+</head>
+<body>
+  
+  <h1>
+    {{step[1]}}
+    <br>
+  </h1>
+    
+  <ol>
+      {% set result = 0 %}
+    
+      {% for item2 in step2 %}
+        {% for item3 in step3 %}
+          {% if item2[0]==step1[0] %}
+            {% if item2[1]==item3[0]  %}
+
+            <li >
+              {{ item3[1]         }} &nbsp;&nbsp;  {{ item2[2] }} &nbsp;&nbsp; {{ item3[3] }} 
+              {% set result =result+ item3[2]*item2[2] %}
+              
+
+            </li>
+            {% endif %}  
+          {% endif %} 
+        {% endfor %}    
+      {% endfor %}
+      
+  
+          </ol>
+            
+
+
+</form>
+
+<ul>
+<li class="il_total">
+  The total cost is :
+  {{total}}&euro;
+  
+</li>
+</ul>
+
+</body>
+
+
+</html>

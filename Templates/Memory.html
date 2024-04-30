@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <link href="static/style.css" rel="stylesheet" />
+    
+    <title>The Basic Language of the Web: HTML</title>
+  </head>
+
+  <body>
+    <!--
+    <h1>The Basic Language of the Web: HTML</h1>
+    <h2>The Basic Language of the Web: HTML</h2>
+    <h3>The Basic Language of the Web: HTML</h3>
+    <h4>The Basic Language of the Web: HTML</h4>
+    <h5>The Basic Language of the Web: HTML</h5>
+    <h6>The Basic Language of the Web: HTML</h6>
+    -->
+
+    <div class="container">
+      <header class="main-header">
+        <h1>This is Memory Page</h1>
+
+
+    
+      </header>
+      
+      <div class="menu-bar">
+
+        <ul>
+            <!-- <strong>This is the navigation</strong> -->
+            <li ><a href="/">Home</a></li>
+            <li><a  href="#">Websites</a></li>
+            <li><a  href="/Recipies">Recipies</a></li>
+            <li><a  href="/Memory"  type="text"  id="anchor_id" name="German">Memory</a>
+
+              <div class="sub_memory">
+                <ul>
+                    <li> <a  href="/Memory?lang=German" type="text"  id="anchor_id" name="German" >German</a></li>
+                    <li> <a  href="/Memory?lang=Salma">Salma</a></li>
+                    <li> <a  href="/Memory?lang=Quraan">Quraan</a></li>
+                    <li> <a  href="/Memory?lang=Courses">Courses</a></li>
+                </ul>
+  
+              </div>
+            </li>
+        </ul>
+      </div>  
+      
+      <header class="post-header">
+        <h2>Videos to be reviewed today</h2>
+      </header>
+
+      
+          
+        <!--
+          <ul class="product">
+            {% for item in step %}
+              {% if item[3]==today  %} 
+              
+                 
+              <a class="an"  href={{item[2]}}>{{item[1]}}</a> 
+              
+              <button class="b">Finished </button>
+              
+              <p class="d">Last Revision: {{item[3]}}</p>
+              
+              
+              {% endif  %}  
+             
+            {% endfor  %}   
+
+            
+          </ul>
+          -->
+        
+         
+        
+        <form action="/finished" method="POST">
+          <input class="hidden"  type="text"  id="table" name="table"  value={{table}}>
+          <ul class="product-container">
+            {% for item in step %}
+              <a class="an" href="{{item[2]}}" target="_blank">{{item[1]}}</a> 
+              <!--span id="postLink" style="cursor: pointer; text-decoration: underline; color: blue;">Click me to send POST request</!--span-->
+              <div >
+                <label class="d" for="price-input"> Quality 1 to 5:</label>
+                <input class="e"  type="text"  id="quality" name="quality" min="1" max="5"  value="5">
+                
+              </div>
+              <button class="b" type="submit" name="button_id" value= {{item[0]}}   >Finished</button>
+              
+              {% if item[6] is not none  %}
+                <label class="f" for="price-input"> {{item[6]}} </label>
+              {% endif %} 
+
+            {% endfor %}
+            
+          </ul>
+          
+        </form>
+    
+        <form action="/finished" method="POST">
+          <input class="hidden"  type="text"  id="table" name="table"  value={{table}}>
+        </form>  
+
+          
+
+
+        
+
+        
+
+        
+
+        
+       
+
+        
+       
+
+      
+    </div>
+    
+    
+  </body>
+</html>

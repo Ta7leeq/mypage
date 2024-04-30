@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="urf-8">
+	<title></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  
+
+</head>
+<body>
+  
+  <h1>
+    {{step1[1]}}
+    <br>
+  </h1>
+    
+  <ol>
+      {% set result = 0 %}
+    
+      {% for item2 in step2 %}
+        {% for item3 in step3 %}
+          {% if item2[0]==step1[0] %}
+            {% if item2[1]==item3[0]  %}
+
+            <li >
+              {{ item3[1]         }} &nbsp;&nbsp;  {{ item2[2] }} &nbsp;&nbsp; {{ item3[3] }} 
+              {% set result =result+ item3[2]*item2[2] %}
+              
+
+            </li>
+            {% endif %}  
+          {% endif %} 
+        {% endfor %}    
+      {% endfor %}
+      
+  
+          </ol>
+            
+
+
+</form>
+
+<ul>
+<li class="il_total">
+  The total cost is :
+  {{total}}&euro;
+  
+</li>
+</ul>
+
+</body>
+
+
+</html>
